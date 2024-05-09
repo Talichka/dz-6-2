@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] words = new String[]{"mama", "papa", "it was me", "yes", "no", "dad", "22"};
+        String[] words = new String[]{"mama", "papa", "itwasme", "yes", "no", "dad", "22"};
         solver(words);
     }
 
