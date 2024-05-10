@@ -2,14 +2,14 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] words = new String[]{"mama", "papa", "itwasme", "yes", "no", "dad", "22"};
+        String[] words = new String[]{"mamam", "papa", "it was Ame", "yes", "no", "ddd", "22"};
         solver(words);
     }
 
     public static void solver(String[] wordsNew) {
-
+        List<String> newList2 = new ArrayList<>();
         List<String> newList = new ArrayList<>();
-        for (String word : wordsNew) {
+        UP_LOP: for (String word : wordsNew) {
             char[] chars = word.toCharArray();
 
             Map<Character, Integer> helpMap = new HashMap<>();
@@ -21,17 +21,18 @@ public class Main {
                     helpMap.put(character, 1);
                 }
             }
-            boolean isRightWord = true;
             for (Character key : helpMap.keySet()) {
-                if (helpMap.get(key) % 2 != 0) {
-                    isRightWord = false;
-                }
+                if (!newList2.contains(word))
+            if (helpMap.get(key) % 2 != 0) {
+                newList2.add(word);
+            }else{
+                if (!newList.contains(word))
+                {newList.add(word);}
             }
-            if (isRightWord) {
-                newList.add(word);
-            }
-        }
+continue UP_LOP;
+                }}
         {System.out.println(newList);}
+        {System.out.println(newList2);}
 Set<Character> setSet = new HashSet<>();
         for (String word: newList){
             for (Character character: word.toCharArray()){
